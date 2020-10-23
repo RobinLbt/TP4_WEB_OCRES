@@ -21,12 +21,14 @@ class Avatar extends React.Component{
 
     render(){
         return (
-            <div style={{width:"40%",height:"40rem",backgroundColor: this.state.style ,margin:"auto",color:"white"}}>
-                <p>Image profil</p>
+            <div style={{width:"40%",height:"fit-content",backgroundColor: this.state.style ,margin:"auto",color:"white"}}>
+                <div style={{width:'10rem',height:'20rem'}}>
+                <img src={require(`../../assets/${this.props.profil.img}`)} style={{maxHeight:'100%',minHeight:'100%'}} alt=''/>
+                </div>
                 <p style={{display:"inline-block",padding:"1rem"}}>{this.props.profil.prenom}</p>
                 <p style={{display:"inline-block"}}>{this.props.profil.nom}</p>
                 <p>{this.props.profil.ddn}</p>
-                <button onClick={this.getStyle}>Change style</button>
+                <button onClick={this.getStyle} style={{margin:'0',padding:'0'}}>Change style</button>
             </div>
         );
     }

@@ -4,6 +4,7 @@ import './App.css';
 
 import ButtonProfil from './components/buttonProfil';
 import Avatar from './components/avatar';
+import SuperContainer from './components/superContainer';
 
 class App extends React.Component {
 
@@ -15,19 +16,22 @@ class App extends React.Component {
 
   profils = [
         {
-          nom: 'bob',
-          prenom: 'sinclar',
-          ddn: Date("1986-01-04 10:34:23"),
+          nom: 'sinclar',
+          prenom: 'bob',
+          ddn: new Date('1984').toLocaleString(),
+          img: '1.jpg'
         },
         {
-          nom: 'martine',
-          prenom: 'lorenz',
-          ddn: Date("1966-01-04 10:34:23"),
+          nom: 'lorenz',
+          prenom: 'pedro',
+          ddn: new Date('1969').toLocaleString(),
+          img: '2.jpg'
         },
         {
-          nom: 'camille',
-          prenom: 'solat',
-          ddn: Date("1992-01-04 10:34:23"),
+          nom: 'solat',
+          prenom: 'camille',
+          ddn: new Date('1997').toLocaleString(),
+          img: '3.jpg'
         }
         ];
  
@@ -38,7 +42,6 @@ class App extends React.Component {
   }
 
   render(){
-    console.log(this.state);
     return (
       <div className="App">
       <header className="App-header">
@@ -47,6 +50,7 @@ class App extends React.Component {
         </div>
       </header>
         <Avatar profil={this.profils[this.state.index]} />
+        <SuperContainer/>
     </div>
     );
 }
